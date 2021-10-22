@@ -3,7 +3,7 @@ from player.models import *
 # Create your views here.
 
 
-def index(request):
+def index_player(request):
     history = HistoryActions.objects.order_by("-id")
     context = {
         "title": "Личный кабинет игрока",
