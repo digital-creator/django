@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from clients.models import *
+from client.models import *
 # Create your views here.
 
 def index_client(request):
@@ -8,4 +8,4 @@ def index_client(request):
         'welcome': 'Добро пожаловать в личный кабинет'
     }
 
-    return render(request, "clients/index.html", context)
+    return render(request, "client/index.html", context)

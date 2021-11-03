@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Accounts(models.Model):
+class Account(models.Model):
     login = models.CharField(max_length=100, verbose_name='Логин')
     password = models.CharField(max_length=100, verbose_name = 'Пароль')
     group = models.IntegerField(verbose_name = 'Группа') # -1 - клиент 0 - Поставщик 1 - игрок
