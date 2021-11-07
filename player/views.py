@@ -10,6 +10,6 @@ def index_player(request):
         "title": "Личный кабинет игрока",
         "history_actions": history,
         "h_materials": "Сырье на складе",
-        "materials_store": materials_store, 
+        "materials_store": materials_store,
         }
-    return render(request, "player/history_actions.html", context)
+    return render(request, "player\player.html", context)
