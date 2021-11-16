@@ -22,5 +22,5 @@ urlpatterns = [
     path('player/', include('player.urls')),
     path('client/', include('client.urls')),
     path('supplier/', include('supplier.urls')),
-    path('login/', include('users.urls'))
+    path('', include('users.urls'))
 ]

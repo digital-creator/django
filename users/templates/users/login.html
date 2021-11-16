@@ -1,21 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>{{ title }}</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <h1>Добро пожаловать</h1>
 
+
+    <div class="card justify-content-center align-items-center">
+    <article class="card-body">
+    	<h4 class="card-title text-center mb-4 mt-1">Добро пожаловать</h4>
+    	<hr>
+    	<form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
         {% for field in form %}
           <div class="form-group mb-3">
             {{ field.label_tag }}
@@ -26,15 +27,15 @@
 
           </div>
         {% endfor %}
-        <button type="submit" class="btn btn-success">
-          Войти
-        </button>
-        {% if form.erros %}
-          <p>Неправильное имя пользователя или пароль</p>
-        {% endif %}
-      </form>
+    	<div class="form-group">
+    	<button type="submit" class="btn btn-primary btn-block"> Войти  </button>
+    	</div> <!-- form-group// -->
+    	<p class="text-center"><a href="#" class="btn">Забыли пароль?</a></p>
+      {% if form.erros %}
+        <p>Неправильное имя пользователя или пароль</p>
+      {% endif %}
+    	</form>
+    </article>
     </div>
-
   </body>
-
 </html>

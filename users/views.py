@@ -12,7 +12,7 @@ def user_login(request):
             data = form.cleaned_data
             user = auth.authenticate(username=data['username'],
                                      password=data['password'])
-            print(user)
+            auth.login(request, user)
             if user.is_authenticated:
                 if user.is_client:
                     return HttpResponseRedirect(reverse('client'))
