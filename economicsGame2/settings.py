@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'product.apps.ProductConfig',
     'account.apps.AccountConfig',
+    'offer.apps.OfferConfig',
     ]
 
 MIDDLEWARE = [

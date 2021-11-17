@@ -9,5 +9,5 @@ class ProductKit(models.Model):
     time = models.IntegerField(verbose_name="Время")
 
 class Product(models.Model):
-    name_product = models.ForeignKey(ProductKit, on_delete=models.CASCADE, max_length=128)
+    product_kit = models.ForeignKey(ProductKit, on_delete=models.CASCADE, max_length=128)
     time = models.IntegerField()

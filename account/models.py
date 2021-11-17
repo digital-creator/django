@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Account(models.Model):
-    is_int = models.BooleanField()
+    is_unlimited = models.BooleanField()
     balance = models.IntegerField()
 
 class Transaction(models.Model):
