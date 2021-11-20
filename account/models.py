@@ -7,7 +7,7 @@ class Account(models.Model):
     balance = models.IntegerField()
 
 class Transaction(models.Model):
-    from_account = models.ForeignKey(Account, on_delete=models.CASCADE)
-    to_account = models.ForeignKey(Account, on_delete=models.CASCADE)
-    offer = None # К чему относится эта переменная?
+    from_account = models.IntegerField()
+    to_account = models.IntegerField()
+    offer = models.ForeignKey()
     time_stamp = models.DateTimeField()
