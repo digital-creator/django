@@ -1,13 +1,18 @@
 from django.db import models
 
-# Create your models here.
+from offer.models import Offer
+
 
 class Account(models.Model):
-    is_unlimited = models.BooleanField()
-    balance = models.IntegerField()
+    is_unlimited = models.BooleanField(default=False)
+
+    @property
+    def balance(self):
+        return 99999999999
+
 
 class Transaction(models.Model):
-    from_account = models.IntegerField()
-    to_account = models.IntegerField()
-    offer = models.ForeignKey()
-    time_stamp = models.DateTimeField()
+    from_account = models.ForeignKey(Account, models.CASCADE, related_name="from_account")
+    to_account = models.ForeignKey(Account, models.CASCADE, related_name="to_account")
+    offer = models.ForeignKey(Offer, models.CASCADE)
+    timestamp = models.DateTimeField()
