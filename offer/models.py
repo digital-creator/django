@@ -28,6 +28,7 @@ class SaleOffer(models.Model):
 
 
 class PurchaseOffer(models.Model):
+    customer = models.ForeignKey(User, models.CASCADE)
     product = models.CharField(max_length=128)
     # count = models.IntegerField()
     offer = models.OneToOneField(Offer, models.CASCADE)

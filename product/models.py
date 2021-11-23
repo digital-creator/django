@@ -8,6 +8,10 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    @staticmethod
+    def create(name: str, time: int):
+        return Product.objects.create(name=name, time=time)
+
 
 class ProductKit(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -20,3 +24,7 @@ class ProductKit(models.Model):
     @property
     def name(self):
         return self.__str__()
+
+    @staticmethod
+    def create(product: Product, count: int, time: int):
+        return ProductKit.objects.create(product=product, count=count, time=time)
