@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'player.apps.PlayerConfig',
     'client.apps.ClientConfig',
-    'supplier.apps.SupplierConfig',
     'users.apps.UsersConfig',
     'product.apps.ProductConfig',
     'account.apps.AccountConfig',
     'offer.apps.OfferConfig',
+    'role.apps.RoleConfig',
+    'bank.apps.BankConfig',
     ]
 
 MIDDLEWARE = [
