@@ -51,3 +51,4 @@ def buy_sale_offer(player: Player, offer: SaleOffer):
 
     super_offer.state = OfferState.DONE
     super_offer.save()
+    

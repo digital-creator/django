@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'offer.apps.OfferConfig',
     'role.apps.RoleConfig',
-    'bank.apps.BankConfig',
     ]
 
 MIDDLEWARE = [

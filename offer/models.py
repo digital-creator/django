@@ -14,9 +14,11 @@ class Offer(models.Model):
     state = models.IntegerField()
 
 class SaleOffer(models.Model):
+    offer = models.ForeignKey(Offer, on_delete=models.CASCADE)
     product_kit = models.CharField(max_length=128)
     count = models.IntegerField()
 
 class PurchaseOffer(models.Model):
+    offer = models.ForeignKey(Offer, on_delete=models.CASCADE)
     product = models.CharField(max_length=128)
     count = models.IntegerField()
